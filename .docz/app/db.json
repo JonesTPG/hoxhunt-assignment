@@ -1,0 +1,67 @@
+{
+  "config": {
+    "title": "Components",
+    "description": "Base project ",
+    "menu": [],
+    "ordering": "descending",
+    "version": "1.0.0",
+    "repository": null,
+    "native": false,
+    "codeSandbox": true,
+    "themeConfig": {
+      "mode": "light",
+      "showPlaygroundEditor": true,
+      "linesToScrollEditor": 14
+    },
+    "typescript": true,
+    "port": 9001,
+    "indexHtml": "docz.html",
+    "public": "/public"
+  },
+  "entries": {
+    "src/app/components/HeroCard/HeroCard.mdx": {
+      "name": "Hero Card",
+      "id": "0f82e19d1d6264b5507f23f9d78e474f",
+      "filepath": "src/app/components/HeroCard/HeroCard.mdx",
+      "link": null,
+      "slug": "src-app-components-hero-card-hero-card",
+      "route": "/src-app-components-hero-card-hero-card",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "hero-card",
+          "value": "Hero Card"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic usage"
+        }
+      ]
+    },
+    "src/app/components/Typography/Typography.mdx": {
+      "name": "Typography",
+      "id": "cec3b0a0830962161609e29a748f9d95",
+      "filepath": "src/app/components/Typography/Typography.mdx",
+      "link": null,
+      "slug": "src-app-components-typography-typography",
+      "route": "/src-app-components-typography-typography",
+      "order": 0,
+      "menu": null,
+      "headings": [
+        {
+          "depth": 1,
+          "slug": "typography",
+          "value": "Typography"
+        },
+        {
+          "depth": 2,
+          "slug": "basic-usage",
+          "value": "Basic usage"
+        }
+      ]
+    }
+  }
+}
