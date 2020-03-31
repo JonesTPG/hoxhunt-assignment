@@ -1,13 +1,9 @@
 import * as React from "react";
 
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import HighlightOffIcon from "@material-ui/icons/HighlightOff";
-
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { Skill } from "src/app/common/types";
-import Typography from "@material-ui/core/Typography";
-import ListItemText from "@material-ui/core/ListItemText";
+
 import Grid from "@material-ui/core/Grid";
 
 export interface HeroSkillProps {

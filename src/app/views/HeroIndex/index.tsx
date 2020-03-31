@@ -85,8 +85,6 @@ export const HeroIndex: React.FC<IHeroIndexProps> = () => {
     return handleLoading();
   }
 
-  console.log(heroes);
-
   return (
     <main>
       <TopBar />
