@@ -1,7 +1,8 @@
 import * as React from "react";
 import gql from "graphql-tag";
 import { useQuery } from "react-apollo-hooks";
-import styled from "styled-components";
+
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 
 import { TopBar } from "../../components/TopBar";
 import { Hero } from "../../components/Hero";
@@ -10,6 +11,7 @@ import { Footer } from "../../components/Footer";
 import { HeroCard } from "../../components/HeroCard";
 
 import { Skill } from "../../common/types";
+import Grid from "@material-ui/core/Grid";
 
 const HEROES_QUERY = gql`
   query {
@@ -52,24 +54,23 @@ interface IHero {
   speed: number;
   resistance: string;
   weakness: string;
+  skills: Skill[];
 }
 
-const HeroCardContainer = styled.div`
-  display: flex;
-  padding: 50px;
-  align-self: center;
-  max-width: 1150px;
-  @media (min-width: 1400px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-`;
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      padding: "20px"
+    }
+  })
+);
 
 const handleLoading = () => <div>Loading...</div>;
 
 const handleError = (message: string) => <div>Error! {message}</div>;
 
 export const HeroIndex: React.FC<IHeroIndexProps> = () => {
+  const classes = useStyles();
   const {
     data: { heroes },
     error,
@@ -83,6 +84,8 @@ export const HeroIndex: React.FC<IHeroIndexProps> = () => {
   if (loading) {
     return handleLoading();
   }
+
+  console.log(heroes);
 
   return (
     <main>
@@ -103,15 +106,16 @@ export const HeroIndex: React.FC<IHeroIndexProps> = () => {
         heading={"The hero index"}
         paragraph={`
 		  Check out the different heroes and their abilities here. 
-		  By clicking a hero you can view more detailed information.
+		  You can view more detailed information by opening the dropdown.
         `}
       />
-
-      <HeroCardContainer>
+      <Grid className={classes.root} container spacing={5} justify="center">
         {heroes.map(hero => (
-          <HeroCard key={hero.name} {...hero} />
+          <Grid key={hero.name} item>
+            <HeroCard {...hero} />
+          </Grid>
         ))}
-      </HeroCardContainer>
+      </Grid>
 
       <Footer />
     </main>
