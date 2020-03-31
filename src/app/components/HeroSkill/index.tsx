@@ -11,7 +11,6 @@ export interface HeroSkillProps {
 }
 
 const HeroSkill: React.SFC<HeroSkillProps> = ({ skill }) => {
-  console.log(skill);
   return (
     <>
       <Grid item xs={8}>
